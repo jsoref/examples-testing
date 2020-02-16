@@ -14,3 +14,4 @@ jobs:
         bucket: ssh://git@github.com/check-spelling/examples.git
         project: spelling-data-typing
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VERBOSE: 1
