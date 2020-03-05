@@ -1,0 +1,3 @@
+^LICENSE\.html$
+^\.github/actions/spell-check/
+^\.github/workflows/
