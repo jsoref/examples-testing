@@ -5,5 +5,4 @@ eiusmod
 elit
 ipsum
 labore
-Lorem
 tempor
