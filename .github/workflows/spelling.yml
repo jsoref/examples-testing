@@ -1,5 +1,5 @@
 name: Spell checking
-on: [pull_request, push]
+on: [pull_request, push, issue_comment, pull_request_review_comment]
 
 jobs:
   build:
