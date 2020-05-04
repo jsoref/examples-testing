@@ -1,0 +1,25 @@
+name: Spell checking
+on: [push]
+
+jobs:
+  build:
+    name: Spell checking
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.0.0
+      with:
+        fetch-depth: 0
+    - uses: check-spelling/check-spelling@prerelease
+      with:
+        bucket: .github/actions/spell-check
+        project: dictionary
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - run: rm /tmp/spelling/*
+      if: success() || failure()
+    - uses: check-spelling/check-spelling@prerelease
+      if: success() || failure()
+      env:
+        bucket: .github/actions/spell-check
+        project: supplement
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
