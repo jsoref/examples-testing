@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v2.0.0
       with:
         fetch-depth: 0
-    - uses: jsoref/check-spelling@prerelease
+    - uses: jsoref/check-spelling@perl
       env:
         bucket: .github/actions
         project: spell-check
