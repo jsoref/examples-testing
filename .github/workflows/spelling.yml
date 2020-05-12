@@ -14,3 +14,4 @@ jobs:
         bucket: .github/actions
         project: spell-check
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DEBUG: 1
