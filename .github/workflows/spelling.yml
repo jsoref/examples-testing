@@ -11,4 +11,5 @@ jobs:
         fetch-depth: 0
     - uses: jsoref/check-spelling@prerelease
       env:
+        DEBUG: 1
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
