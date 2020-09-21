@@ -10,6 +10,8 @@ jobs:
       with:
         fetch-depth: 0
     - uses: jsoref/check-spelling@prerelease
+      with:
+        dictionary_version: 'https://raw.githubusercontent.com/check-spelling/check-spelling/dictionary-\$DICTIONARY_VERSION/dict.txt'
       env:
         DEBUG: 1
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
