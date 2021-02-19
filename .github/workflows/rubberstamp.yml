@@ -6,5 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Rubber-stamp
-        if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+        if: github.actor == 'dependabot[bot]' || github.actor == 'jsoref'
         run: gh pr review --approve -b ':shrug:'
