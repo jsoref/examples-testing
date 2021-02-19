@@ -1,0 +1,10 @@
+name: Rubber-stamp
+on: pull_request_target
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rubber-stamp
+        if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+        run: gh pr review --approve -b ':shrug:'
