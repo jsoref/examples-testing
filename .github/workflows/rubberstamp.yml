@@ -2,7 +2,7 @@ name: Rubber-stamp
 on: pull_request_target
 
 jobs:
-  build:
+  approve:
     runs-on: ubuntu-latest
     steps:
       - name: Rubber-stamp
