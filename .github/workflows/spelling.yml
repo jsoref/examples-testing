@@ -1,5 +1,5 @@
 name: Spell checking
-on: [pull_request_target, push, issue_comment, pull_request_review_comment]
+on: [pull_request_target, push, issue_comment]
 
 jobs:
   build:
@@ -11,7 +11,6 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
         fetch-depth: 0
     - uses: jsoref/check-spelling@prerelease
-      env:
-        bucket: .github/actions
-        project: spell-check
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        config: .github/actions/spell-check
+        experimental_apply_changes_via_bot: 1
