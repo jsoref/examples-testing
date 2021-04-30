@@ -8,8 +8,22 @@ jobs:
       - name: Rubber-stamp
         if: github.actor == 'dependabot[bot]' || github.actor == 'jsoref'
         run: >-
-          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          gh pr review
-          -R $GITHUB_REPOSITORY
-          ${{github.event.pull_request.number}}
-          --approve -b ':shrug:'
+          (
+            GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+            PR=${{ github.event.pull_request.number }}
+            if
+              !
+              gh
+              pr
+              view $PR
+              --json reviews
+              -q '.reviews' |
+              jq -r '.[] | select(.state=="APPROVED") | .state' |
+              grep -q APPROVED
+            ; then;
+              gh pr review
+              -R $GITHUB_REPOSITORY
+              $PR
+              --approve -b ':shrug:'
+            fi
+          )
