@@ -13,4 +13,5 @@ jobs:
     - uses: check-spelling/check-spelling@prerelease
       with:
         experimental_apply_changes_via_bot: 1
+        check_extra_dictionaries: ''
         debug: 1
