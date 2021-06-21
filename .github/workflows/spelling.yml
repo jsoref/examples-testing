@@ -10,7 +10,7 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.sha }}
         fetch-depth: 0
-    - uses: check-spelling/check-spelling@prerelease
+    - uses: jsoref/check-spelling@prerelease
       with:
         experimental_apply_changes_via_bot: 1
         check_extra_dictionaries: ''
