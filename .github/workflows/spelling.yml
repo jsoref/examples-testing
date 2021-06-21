@@ -9,7 +9,6 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.event.pull_request.head.sha }}
-        fetch-depth: 0
     - uses: jsoref/check-spelling@prerelease
       with:
         experimental_apply_changes_via_bot: 1
